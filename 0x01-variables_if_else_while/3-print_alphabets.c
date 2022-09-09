@@ -10,17 +10,17 @@
 
 int main(void)
 {
-	int i = 0;
+	int ch;
 	char alphabetsLower[] = "abcdefghijklmnopqrstuvwxyz";
 	char alphabetsUpper[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	for (i = 0; i < 26; i++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		putchar(alphabetsLower[i]);
+		putchar(ch);
 	}
-	for (i = 0; i < 26; i++)
+	for (ch = 'A'; ch <= 'Z'; ch++)
 	{
-		putchar(alphabetsUpper[i]);
+		putchar(ch);
 	}
 	return (0);
 }
