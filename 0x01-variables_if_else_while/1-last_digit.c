@@ -14,12 +14,12 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	int n;
+	int n, lastDigit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
-	int lastDigit = n % 10;
+	lastDigit = n % 10;
 
 	printf("Last digit of %d is %d and is ", n, lastDigit);
 	if (lastDigit > 5)
