@@ -11,8 +11,6 @@
 int main(void)
 {
 	int ch;
-	char alphabetsLower[] = "abcdefghijklmnopqrstuvwxyz";
-	char alphabetsUpper[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
