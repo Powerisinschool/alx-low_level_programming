@@ -1,32 +1,36 @@
 #include <stdio.h>
+
 /**
- * main - prints all possible different combinations of two digits
- * Return: ALways 0 (Success)
+ * main - Entry point
+ *
+ * Description: 'Prints all combinations of 2 different digits, no reprtition'
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int l_d;
+	int d1, d2, x1, x2;
 
-	while (c <= 99)
+	for (d1 = '0'; d1 <= '9'; d1++)
 	{
-		f_d = (c / 10 + '0');
-		l_d = (c % 10 + '0');
-
-		if (f_d < l_d)
+		for (d2 = '0'; d2 <= '9'; d2++)
 		{
-			putchar(f_d);
-			putchar(l_d);
-
-			if (c != 89)
+			x1 = d1 - '0';
+			x2 = d2 - '0';
+			if (d1 == d2 || d2 == '0' || x2 < x1 + 1)
+			{
+				continue;
+			}
+			if (d2 != '1')
 			{
 				putchar(',');
 				putchar(' ');
 			}
+			putchar(d1);
+			putchar(d2);
 		}
-		c++;
 	}
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
