@@ -11,6 +11,7 @@
 void jack_bauer(void)
 {
 	int h1, h2, m1, m2;
+
 	for (h1 = 0; h1 <= 2; h1++)
 	{
 		for (h2 = 0; h2 <= 3; h2++)
@@ -22,10 +23,9 @@ void jack_bauer(void)
 					putchar(h1 + '0');
 					putchar(h2 + '0');
 					putchar(m1 + '0');
-                                        putchar(m2 + '0');
+					putchar(m2 + '0');
 				}
 			}
 		}
 	}
-	return (0);
 }
