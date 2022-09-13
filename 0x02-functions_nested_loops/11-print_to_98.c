@@ -17,6 +17,7 @@ void print_to_98(int n)
 		for (; n <= 97; n++)
 		{
 			printf("%d", n);
+			fflush(stdout);
 			_putchar(',');
 			_putchar(' ');
 		}
@@ -25,6 +26,7 @@ void print_to_98(int n)
 		for (; n >= 99; n--)
 		{
 			printf("%d", n);
+			fflush(stdout);
 			_putchar(',');
 			_putchar(' ');
 		}
