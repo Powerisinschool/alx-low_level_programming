@@ -12,7 +12,7 @@ int main(void)
 {
 	int i, sum;
 
-	for (i = 1; a1 < 1024; a1++)
+	for (i = 1; i < 1024; i++)
 	{
 		if ((i * 3) < 1024)
 		{
@@ -25,5 +25,5 @@ int main(void)
 			break;
 		}
 	}
-	return (0);
+	printf("%d\n", sum);
 }
