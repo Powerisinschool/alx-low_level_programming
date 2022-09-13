@@ -8,7 +8,7 @@
  * Return: Always 0 (Success)
  */
 
-int time_table(void)
+void time_table(void)
 {
 	int i, j, k;
 
