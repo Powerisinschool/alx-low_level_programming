@@ -12,6 +12,10 @@
 
 int print_last_digit(int n)
 {
+	if (n == INT_MIN)
+	{
+		n = INT_MAX;
+	}
 	n = _abs(n);
 	_putchar((n % 10) + '0');
 	return (n % 10);
