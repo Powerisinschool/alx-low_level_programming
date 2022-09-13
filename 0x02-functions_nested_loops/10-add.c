@@ -2,6 +2,8 @@
 
 /**
  * add - Entry point
+ * @a: 'Integer to be added'
+ * @b: 'Integer to be added'
  *
  * Description: 'the program's description'
  *
