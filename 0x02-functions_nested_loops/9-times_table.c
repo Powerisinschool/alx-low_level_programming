@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * time_table - Entry point
+ * times_table - Entry point
  *
  * Description: 'the program's description'
  *
  * Return: Always 0 (Success)
  */
 
-void time_table(void)
+void times_table(void)
 {
 	int i, j, k;
 
