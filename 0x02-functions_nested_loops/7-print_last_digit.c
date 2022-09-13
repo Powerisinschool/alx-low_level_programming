@@ -9,7 +9,7 @@
  * Return: Always 0 (Success)
  */
 
-int main(int n)
+int print_last_digit(int n)
 {
 	return (n % 10);
 }
