@@ -1,4 +1,3 @@
-#include <math.h>
 #include "main.h"
 
 /**
@@ -12,5 +11,9 @@
 
 int _abs(int n)
 {
-	return (pow(pow(n, 2), 0.5));
+	if (n < 0)
+	{
+		return (n * -1);
+	}
+	return (n);
 }
