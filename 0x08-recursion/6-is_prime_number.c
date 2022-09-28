@@ -7,7 +7,7 @@
  *
  */
 
-int is_prime(int n, int i)
+int _is_prime(int n, int i)
 {
 	if (i == 1)
 	{
@@ -17,11 +17,11 @@ int is_prime(int n, int i)
 		return (0);
 	} else
 	{
-		return (n, (i - 1));
+		return (_is_prime(n, i - 1));
 	}
 }
 
 int is_prime_number(int n)
 {
-	return (is_prime(n, n/2));
+	return (_is_prime(n, n/2));
 }
