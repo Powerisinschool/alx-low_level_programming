@@ -17,7 +17,7 @@ int is_prime(int n, int i)
 		return (0);
 	} else
 	{
-		return (n, i -1);
+		return (n, (i - 1));
 	}
 }
 
