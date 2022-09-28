@@ -30,11 +30,6 @@ int check_palindrome(char *s)
 	{
 		s++;
 		l--;
-		if (check_palindrome(s) == 1)
-		{
-			return (1);
-		}
-		return (0);
 	}
 	else
 		return (0);
