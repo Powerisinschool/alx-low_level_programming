@@ -7,11 +7,6 @@
  *
  */
 
-int is_prime_number(int n)
-{
-	is_prime(n, n/2);
-}
-
 int is_prime(int n, int i)
 {
 	if (i == 1)
@@ -24,4 +19,9 @@ int is_prime(int n, int i)
 	{
 		return (n, i -1);
 	}
+}
+
+int is_prime_number(int n)
+{
+	return (is_prime(n, n/2));
 }
