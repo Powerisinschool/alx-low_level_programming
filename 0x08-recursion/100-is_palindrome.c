@@ -26,16 +26,15 @@ int check_palindrome(char *s)
 {
 	int l = _strlen_recursion(s) - 1;
 
-	if (_strlen_recursion(s) - 1 == 0)
-	{
-		return (1);
-	}
-
 	if (*s == s[l] && *s)
 	{
 		s++;
 		l--;
-		return (check_palindrome(s));
+		if (check_palindrome(s) == 1)
+		{
+			return (1);
+		}
+		return (0);
 	}
 	else
 		return (0);
