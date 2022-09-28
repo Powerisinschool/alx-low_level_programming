@@ -26,7 +26,7 @@ int check_palindrome(char *s)
 {
 	int l = _strlen_recursion(s) - 1;
 
-	if ((l / 2) != (s / 2))
+	if (s[l / 2] != *(s / 2))
 	{
 		return (0);
 	}
