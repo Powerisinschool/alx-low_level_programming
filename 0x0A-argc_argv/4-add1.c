@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _atoi - converts a string to an integer
@@ -7,6 +7,7 @@
  *
  * Return: the int converted from the string
  */
+
 int _atoi(char *s)
 {
 	int i, d, n, len, f, digit;
@@ -47,39 +48,29 @@ int _atoi(char *s)
 }
 
 /**
- * main - adds two positive number
- * @argc: number of arguments
- * @argv: array of arguents
- *
- * Return: 0 (Success), or 1 (Success)
+ * main - Entry point
+ * @argc: argument count
+ * @argv: arguments
+ * Return: the int converted from the string
  */
+
 int main(int argc, char *argv[])
 {
-	int sum, num, i, j, k;
-
-	sum = 0;
+	int i, j, sum;
 
 	for (i = 1; i < argc; i++)
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (argv[i][j] > '9' || argv[i][j] < '0')
+			if (*argv[i] > '9' || *argv[i] < '0')
 			{
-				puts("Error");
+				printf("Error\n");
 				return (1);
 			}
 		}
+		if (_atoi(argv[i]) > 0)
+			sum += _atoi(argv[i]);
 	}
-
-	for (k = 1; k < argc; k++)
-	{
-		num = _atoi(argv[k]);
-		if (num >= 0)
-		{
-			sum += num;
-		}
-	}
-
 	printf("%d\n", sum);
 	return (0);
 }
