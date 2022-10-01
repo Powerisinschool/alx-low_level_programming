@@ -7,7 +7,6 @@
  *
  * Return: the int converted from the string
  */
-
 int _atoi(char *s)
 {
 	int i, d, n, len, f, digit;
@@ -49,19 +48,23 @@ int _atoi(char *s)
 
 /**
  * main - Entry point
- * @argc: Argument count
- * @argv: Arguments
- * Return: 0 for success and 1 for error
+ * @argc: argument count
+ * @argv: arguments
+ * Return: the int converted from the string
  */
 
 int main(int argc, char *argv[])
 {
-	if (argc != 3)
+	int i, sum;
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
+		if (*argv[i] > '9' || *argv[i] < '0')
+		{
+			printf("Error\n");
+			return (1);
+		}
+		sum += _atoi(argv[i]);
 	}
-
-	printf("%d\n", _atoi(argv[1]) * _atoi(argv[2]));
+	printf("%d\n", sum);
 	return (0);
 }
