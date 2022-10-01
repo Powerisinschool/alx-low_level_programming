@@ -56,7 +56,7 @@ int _atoi(char *s)
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, j, sum;
 
 	for (i = 1; i < argc; i++)
 	{
