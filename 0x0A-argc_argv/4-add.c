@@ -7,6 +7,7 @@
  *
  * Return: the int converted from the string
  */
+
 int _atoi(char *s)
 {
 	int i, d, n, len, f, digit;
@@ -56,6 +57,7 @@ int _atoi(char *s)
 int main(int argc, char *argv[])
 {
 	int i, sum;
+
 	for (i = 1; i < argc; i++)
 	{
 		if (*argv[i] > '9' || *argv[i] < '0')
