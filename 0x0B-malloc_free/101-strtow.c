@@ -18,7 +18,7 @@ char **strtow(char *str)
 	for (; input[i] != '\0'; i++)
 	{
 		if (input[i] != ' ')
-			result[i] = input[i];
+			result[i] = *input[i];
 		else
 		{
 			result[i] = '\0';
