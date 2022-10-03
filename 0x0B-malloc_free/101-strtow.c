@@ -1,10 +1,12 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 char **strtow(char *str)
 {
 	char *input = NULL;
 	int i = 0;
-	char *result = {};
+	char *result = malloc(strlen(str) + 1);
 
 	if (str != NULL)
 		input = str;
