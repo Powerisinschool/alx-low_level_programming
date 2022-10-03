@@ -7,7 +7,7 @@ char **strtow(char *str)
 {
 	char *input = NULL;
 	int i = 0;
-	char *result = malloc(strlen(str) + 1);
+	char **result = malloc(strlen(str) + 1);
 
 	if (str != NULL)
 		input = str;
