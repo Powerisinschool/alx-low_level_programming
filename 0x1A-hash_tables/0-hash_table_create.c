@@ -1,25 +1,8 @@
 #include "hash_tables.h"
 
-/**
- * hash_function - Entry point
- * @str: string
- * @size: int
- * Description: 'Return hash of a string'
- *
- * Return: Hash (Success)
- */
-unsigned long hash_function(char *str, unsigned long int size)
-{
-	unsigned long i = 0;
-	int j;
-
-	for (j = 0; str[j]; j++)
-		i += str[j];
-	return (i % size);
-}
 
 /**
- * hash_table_create - Entry point
+ * hash_table_create - Create Hash Table
  *
  * @size: int
  * Description: 'Create an empty hash table'
