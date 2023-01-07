@@ -1,5 +1,10 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_delete - Deletes a hash table freeing it completely from memory
+ * @ht: The hash table to be deleted
+ * Return: void
+ */
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i;
@@ -25,5 +30,4 @@ void hash_table_delete(hash_table_t *ht)
 	free(ht);
 	free(node);
 	free(next);
-	return;
 }
