@@ -10,10 +10,19 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index = key_index((const unsigned char *) key, ht->size);
 	char *value;
+	hash_node_t *node = ht->array[index];
 
-	if (ht->array[index] == NULL)
-		return (NULL);
-	value = ht->array[index]->value;
+	while (1)
+	{
+		if (node == NULL)
+			return NULL;
+		if (strcmp(node->key, key) == 0)
+		{
+			value = node->value;
+			break;
+		}
+		node = node->next;
+	}
 
 	return (value);
 }
