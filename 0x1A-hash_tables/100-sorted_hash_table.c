@@ -290,8 +290,9 @@ void shash_table_delete(shash_table_t *ht)
 		return;
 
 	/* Free the nodes in the sorted linked list */
-	curr = ht->shead;
-	/*while (curr != NULL)
+	/* This causes a double free. The heap is already freed by the next loop */
+	/*curr = ht->shead;
+	while (curr != NULL)
 	{
 		temp = curr;
 		curr = curr->snext;
