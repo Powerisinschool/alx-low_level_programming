@@ -12,8 +12,9 @@ shash_table_t *shash_table_create(unsigned long int size)
 {
 	unsigned long int i;
 	shash_table_t *ht = malloc(sizeof(shash_table_t));
+
 	if (ht == NULL)
-		return NULL;
+		return (NULL);
 
 	ht->size = size;
 	ht->array = malloc(sizeof(shash_node_t *) * size);
@@ -33,15 +34,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 	}
 
 	return (ht);
-
-	/*table = (shash_table_t *) malloc(sizeof(shash_table_t));
-	table->size = size;
-	table->array = (shash_node_t **) calloc(table->size, sizeof(shash_node_t *));
-	for (i = 0; i < table->size; i++)
-		table->array[i] = NULL;
-	table->shead = NULL;
-	table->stail = NULL;
-	return (table);*/
 }
 
 /**
@@ -93,7 +85,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *) key, ht->size);
 
 	if (ht->array[index] == NULL)
-		ht->array[index] = new_node; /* The array is empty, so insert the node at the head */
+		ht->array[index] = new_node; /* Array is empty, so insert node at head */
 	else
 	{
 		/* Find the tail of the linked list */
@@ -143,41 +135,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 
 	return (1);
-	/*unsigned long int index = key_index((const unsigned char *) key, ht->size);
-	shash_node_t *node = ht->array[index];
-	shash_node_t *new_node;
-
-	if (ht == NULL || *key == '\n' || *value == '\n')
-		return (0);
-
-	if (node == NULL)
-	{
-		new_node = malloc(sizeof(shash_node_t));
-		if (new_node == NULL)
-			return (NULL);
-
-		new_node->key = strdup(key);
-		new_node->value = strdup(value);
-		new_node->next = NULL;
-		new_node->snext = NULL;
-		new_node->sprev = NULL;
-
-		ht->array[index] = new_node;
-
-		addToOrder(new_node, shead, stail);
-		return (1);
-	}
-
-	while (1)
-	{
-		if (node->next == NULL)
-		{
-			new_node = create_node(key, value);
-			node->next = new_node;
-			break;
-		}
-	}
-	return (0);*/
 }
 
 /**
@@ -216,7 +173,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	shash_node_t *curr;
 
 	if (ht == NULL || key == NULL)
-		return NULL;
+		return (NULL);
 
 	index = key_index((const unsigned char *) key, ht->size);
 	curr = ht->array[index];
@@ -239,7 +196,7 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *curr;
 
 	if (ht == NULL)
-			return;
+		return;
 
 	putchar('{');
 	curr = ht->shead;
@@ -289,18 +246,6 @@ void shash_table_delete(shash_table_t *ht)
 	if (ht == NULL)
 		return;
 
-	/* Free the nodes in the sorted linked list */
-	/* This causes a double free. The heap is already freed by the next loop */
-	/*curr = ht->shead;
-	while (curr != NULL)
-	{
-		temp = curr;
-		curr = curr->snext;
-		free(temp->key);
-		free(temp->value);
-		free(temp);
-	}*/
-
 	/* Free the nodes in the hash table */
 	for (i = 0; i < ht->size; i++)
 	{
@@ -308,7 +253,7 @@ void shash_table_delete(shash_table_t *ht)
 		while (curr != NULL)
 		{
 			temp = curr;
-			curr = curr -> next;
+			curr = curr->next;
 			free(temp->key);
 			free(temp->value);
 			free(temp);
