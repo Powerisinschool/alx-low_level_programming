@@ -138,29 +138,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * create_node - create a new node
- * @key: is the key. key can not be an empty string
- * @value: value associated with the key.
- * value must be duplicated. value can be an empty string
- * Return: 1 on success, 0 on failurre
- */
-shash_node_t *create_node(const char *key, const char *value)
-{
-	shash_node_t *new_node;
-
-	new_node = malloc(sizeof(shash_node_t));
-
-	if (new_node == NULL)
-		return (NULL);
-
-	new_node->key = strdup(key);
-	new_node->value = strdup(value);
-	new_node->next = NULL;
-
-	return (new_node);
-}
-
-/**
  * shash_table_get - Get the value for a key in a sorted hash table
  * @ht: The sorted hash table
  * @key: The key to get
