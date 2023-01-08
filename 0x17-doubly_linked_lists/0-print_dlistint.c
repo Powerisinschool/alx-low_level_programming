@@ -11,6 +11,9 @@ size_t print_dlistint(const dlistint_t *h)
 	size_t i = -1;
 	dlistint_t *curr = (dlistint_t *) h;
 
+	if (h == NULL)
+		return (0);
+
 	while (curr != NULL)
 	{
 		printf("%i\n", curr->n);
