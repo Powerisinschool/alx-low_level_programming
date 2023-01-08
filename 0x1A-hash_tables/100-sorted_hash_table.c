@@ -291,14 +291,14 @@ void shash_table_delete(shash_table_t *ht)
 
 	/* Free the nodes in the sorted linked list */
 	curr = ht->shead;
-	while (curr != NULL)
+	/*while (curr != NULL)
 	{
 		temp = curr;
 		curr = curr->snext;
 		free(temp->key);
 		free(temp->value);
 		free(temp);
-	}
+	}*/
 
 	/* Free the nodes in the hash table */
 	for (i = 0; i < ht->size; i++)
