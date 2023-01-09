@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * add_nodeint - Add a node to the start of a linked list
- * @h: The linked list
+ * add_dnodeint - Add a node to the start of a linked list
+ * @head: The linked list
  * @n: The value
  *
  * Return: The number of elements
@@ -10,6 +10,7 @@
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new = malloc(sizeof(dlistint_t));
+
 	if (new == NULL)
 		return (NULL);
 

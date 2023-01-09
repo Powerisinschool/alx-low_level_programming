@@ -1,6 +1,13 @@
 #include "lists.h"
 
-/***/
+/**
+ * insert_dnodeint_at_index - Insert a node at an index
+ * @h: A pointer to the linked list
+ * @idx: The index to insert at
+ * @n: The value to be inserted
+ *
+ * Return: The inserted node
+ */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new = malloc(sizeof(dlistint_t));
@@ -22,10 +29,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->next = curr;
 	new->prev = curr->prev;
 	curr->prev = new;
-
-	/*while (curr->prev != NULL)
-		curr = curr->prev;
-	*h = curr;*/
 
 	return (new);
 }
