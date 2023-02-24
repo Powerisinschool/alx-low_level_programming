@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-CC = gcc -O
+CC = gcc
 SRC = main.c school.c
 
 all: main.c school.c
